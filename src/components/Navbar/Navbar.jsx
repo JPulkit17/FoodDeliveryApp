@@ -1,24 +1,29 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
-function Navbar() {
+import { Link } from 'react-router-dom';
+import StoreContext from '../../Context/StoreContext'
+function Navbar({setShowLogin}) {
+  // const {getTotalCartAmmount} = useContext(StoreContext);
   const [menu , setMenu] = useState("home");
   return (
     <div className='navbar'>
-        <img className='logo' src={assets.quickbite} alt="" />
+        <Link to='/'><img className='logo' src={assets.quickbite} alt="" /></Link>
         <ul className='navbar-menu'>
-            <li onClick={()=>setMenu("home")}className={menu==="home"&&"active"}>home</li>
-            <li onClick={()=>setMenu("menu")}className={menu==="menu"&&"active"}>menu</li>
-            <li onClick={()=>setMenu("mobile-app")}className={menu==="mobile-app"&&"active"}>mobile-app</li>
-            <li onClick={()=>setMenu("contact-us")}className={menu==="contact-us"&&"active"}>contact-us</li>
+            <Link to='/' onClick={()=>setMenu("home")}className={menu==="home"&&"active"}>home</Link>
+            <a href='#explore-menu' onClick={()=>setMenu("menu")}className={menu==="menu"&&"active"}>menu</a>
+            <a href='#app-download' onClick={()=>setMenu("mobile-app")}className={menu==="mobile-app"&&"active"}>mobile-app</a>
+            <a href='#footer' onClick={()=>setMenu("contact-us")}className={menu==="contact-us"&&"active"}>contact-us</a>
         </ul>
         <navbar className="navbar-right">
             <img src={assets.search_icon} alt="" />
             <div className="navbar-search-icon">
-                <img src={assets.basket_icon} alt="" />
+                <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
                 <div className="dot"></div>
             </div>
-            <button>sign in</button>
+            <button onClick={()=>setShowLogin(true)}>sign in</button>
         </navbar>
     </div>
   )
