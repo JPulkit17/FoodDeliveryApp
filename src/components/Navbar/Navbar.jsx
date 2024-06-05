@@ -5,6 +5,7 @@ import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom';
 import {StoreContext} from '../../Context/StoreContext'
+import { BsCart } from "react-icons/bs";
 function Navbar({setShowLogin}) {
   const {getTotalCartAmmountState} = useContext(StoreContext);
   const [menu , setMenu] = useState("home");
@@ -20,7 +21,7 @@ function Navbar({setShowLogin}) {
         <navbar className="navbar-right">
             {/* <img src={assets.search_icon} alt="" /> */}
             <div className="navbar-search-icon">
-                <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
+                <Link to='/cart'><BsCart size={30}/></Link>
                 <div className={getTotalCartAmmountState?"dot":""}></div>
             </div>
             <button onClick={()=>setShowLogin(true)}>sign in</button>
