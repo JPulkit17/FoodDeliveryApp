@@ -10,7 +10,7 @@ const StoreContextProvider = (props) => {
     const addToCart = (itemId) => {
         if(!cartItems[itemId]){
             setCartItems((prev)=>({...prev,[itemId]:1}))
-            console.log(cartItems)
+            setGetTotalCartAmmountState(true);
         }
         else{
             setCartItems(prev=>({...prev,[itemId]:prev[itemId]+1}))
