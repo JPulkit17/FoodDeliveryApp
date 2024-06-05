@@ -7,6 +7,7 @@ import Cart from './pages/Cart/Cart';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Footer from './components/Footer/Footer';
 import LogInPopUp from './components/LogInPopUp/LogInPopUp';
+import OrderPlaced from './pages/OrderPlaced.jsx/OrderPlaced';
 function App() {
   const [showLogin,setShowLogin] = useState(false);
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/cart'element={<Cart/>}/>
         <Route path='/order' element={<PlaceOrder/>}/>
+        <Route path='/orderPlaced' element={<OrderPlaced/>}/>
       </Routes>
     </div>
     <Footer/>
