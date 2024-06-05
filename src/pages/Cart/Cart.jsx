@@ -60,7 +60,8 @@ function Cart() {
               {getTotalCartAmmountState?<b>₹{getTotalCartAmmount()+deliveryFee}</b>:<b>{0}</b>}
               
             </div>
-            <Link to='/order'><button>PROCEED TO CHECKOUT</button></Link>
+            {getTotalCartAmmountState?<Link to='/order'><button>PROCEED TO CHECKOUT</button></Link>:<></>}
+            
           </div>
         </div>
         <div className="cart-promocode">

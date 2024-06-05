@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function PlaceOrder() {
   const {getTotalCartAmmount,getTotalCartAmmountState,deliveryFee} = useContext(StoreContext);
+  
   const navigate = useNavigate();
   const amount= 500;
   const currency = "INR";
@@ -63,13 +64,16 @@ function PlaceOrder() {
   };
   var rzp1 = new Razorpay(options);
   rzp1.on('payment.failed', function (response){
-          alert(response.error.code);
-          alert(response.error.description);
-          alert(response.error.source);
-          alert(response.error.step);
-          alert(response.error.reason);
-          alert(response.error.metadata.order_id);
-          alert(response.error.metadata.payment_id);
+          // alert(response.error.code);
+          // alert(response.error.description);
+          // alert(response.error.source);
+          // alert(response.error.step);
+          // alert(response.error.reason);
+          // alert(response.error.metadata.order_id);
+          // alert(response.error.metadata.payment_id);
+          alert("Transaction Failed , please try again");
+          
+          
   });
   rzp1.open();
   e.preventDefault();
@@ -117,6 +121,7 @@ function PlaceOrder() {
               
             </div>
             <button onClick={paymentHandler}>PROCEED TO PAYMENT</button>
+           
           </div>
         </div>
     </div>
