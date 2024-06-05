@@ -5,8 +5,8 @@ import {StoreContext} from '../../Context/StoreContext'
 import { Link } from 'react-router-dom';
 function Cart() {
   const{cartItems,food_list,removeFromCart,getTotalCartAmmount,getTotalCartAmmountState , 
-    setGetTotalCartAmmountState}=useContext(StoreContext);
-    const deliveryFee = 50;
+    deliveryFee}=useContext(StoreContext);
+    
   return (
     <div className='cart'>
       <div className="cart-items">
