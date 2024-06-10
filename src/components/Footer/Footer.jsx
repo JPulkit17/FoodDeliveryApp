@@ -8,7 +8,8 @@ function Footer() {
         <div className="footer-content">
             <div className="footer-content-left">
                 <img className="logo"src={assets.quickbite} alt="" />
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem pariatur laborum architecto modi facere, adipisci qui iste repellat? Id, explicabo! Itaque eveniet facere ipsam iure neque beatae provident ea quisquam?</p>
+                <p>Delivering happiness one meal at a time. At QuickBite, we are committed to providing you with the freshest ingredients, the most delicious recipes, and the fastest delivery service. Thank you for choosing us to satisfy your cravings. Your satisfaction is our top priority.</p>
+                <p>Follow us on social media for exclusive offers and the latest updates!</p>
                 <div className="footer-social-items">
                     <img src={assets.facebook_icon} alt="" /><img src={assets.linkedin_icon} alt="" /><img src={assets.twitter_icon} alt="" />
                 </div>

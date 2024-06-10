@@ -8,13 +8,14 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Footer from './components/Footer/Footer';
 import LogInPopUp from './components/LogInPopUp/LogInPopUp';
 import OrderPlaced from './pages/OrderPlaced.jsx/OrderPlaced';
+
 function App() {
-  const [showLogin,setShowLogin] = useState(false);
+  // const [showLogin,setShowLogin] = useState(false);
   return (
     <>
-    {showLogin?<LogInPopUp setShowLogin={setShowLogin}/>:<></>}
+    {/* {showLogin?<LogInPopUp setShowLogin={setShowLogin}/>:<></>} */}
     <div className='app'>
-      <Navbar setShowLogin={setShowLogin}/>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/cart'element={<Cart/>}/>

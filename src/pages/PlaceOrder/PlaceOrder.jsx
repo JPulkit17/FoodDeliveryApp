@@ -3,14 +3,14 @@ import React, { useContext, useState } from 'react'
 import './PlaceOrder.css'
 import {StoreContext} from '../../Context/StoreContext'
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth0 } from "@auth0/auth0-react";
 function PlaceOrder() {
-  const {getTotalCartAmmount,getTotalCartAmmountState,deliveryFee} = useContext(StoreContext);
-  
+  const {getTotalCartAmmount,getTotalCartAmmountState,deliveryFee,setCartItems,setGetTotalCartAmmountState} = useContext(StoreContext);
   const navigate = useNavigate();
   const amount= 500;
   const currency = "INR";
   const receiptId = "qwsaq1";
+  
   const paymentHandler = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:5000/order",{
@@ -45,6 +45,7 @@ function PlaceOrder() {
           })
           const jsonRes = await validateRes.json();
           if(jsonRes.msg=="Success"){
+              setCartItems({})
               navigate("/orderPlaced");
           }  
           
@@ -84,8 +85,8 @@ function PlaceOrder() {
     <div className="place-order-left">
       <p className='title'>Delivery Information</p>
       <div className="multi-fields">
-        <input type="text" placeholder='First Name'/>
-        <input type="text" placeholder='Last Name'/>
+        <input type="text" placeholder='Full Name' />
+        {/* <input type="text" placeholder='Last Name'/> */}
       </div>
       <input type="email" placeholder='Email Address'/>
       <input type="text" placeholder='Street'/>

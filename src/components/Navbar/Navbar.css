@@ -52,6 +52,9 @@
     top: -8px;
     right: -8px;
 }
+.name{
+    color: tomato;
+}
 @media (max-width:1050px) {
     .navbar .logo{
         width: 140px;
